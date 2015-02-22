@@ -5,7 +5,7 @@
 @import 's-grid'
 
 html, body, p, h1, h2, h3, h4, h5, h6
-    font-family 'Roboto' sans-serif
+    font-family 'Raleway' sans-serif
 
 .back-to-top-btn
     background #e6e6e6
@@ -49,19 +49,25 @@ header
             color inherit
 
 .jumbo
-    padding-top rem-calc(150px)
-    padding-bottom rem-calc(150px)
+    padding-top rem-calc(180px)
+    padding-bottom rem-calc(145px)
     text-align center
-    font-weight 900
+    font-weight 700
     color #fff
     background linear-gradient(to bottom right, #F06060 , #da5757);
     font-size rem-calc(30px)
+    background-image url('/bgbg3.jpg')
+    background-position 50%
+    background-size cover
+    .buttons
+        margin-top rem-calc(30px)
     h2
-        font-size rem-calc(50px)
+        font-size rem-calc(45px)
+        font-weight 900
     @media screen and (min-width: rem-calc(breakpoints[md]))
         font-size rem-calc(55px)
         h2
-            font-size rem-calc(100px)
+            font-size rem-calc(86px)
 main
     width 100%
     max-width rem-calc(900px)
@@ -74,7 +80,7 @@ main
     padding-bottom rem-calc(40px)
     h2, h3
         margin-bottom rem-calc(15px)
-        font-weight 400
+        font-weight 800
     h2
         font-size rem-calc(40px)
         margin-top rem-calc(70px)
@@ -95,10 +101,10 @@ main
         margin-top rem-calc(20px)
         margin-bottom rem-calc(20px)
     .demo-grid
-        background-color darken(#f8f8f8, 3%)
+        background-color rgba(#23222D, 0.1)
         margin-bottom rem-calc(40px)
     .demo-item
-        background-color darken(#f8f8f8, 10%)
+        background-color rgba(#23222D, 0.1)
         padding rem-calc(20px)
         border-radius rem-calc(3px)
         font-size rem-calc(14px)
@@ -124,40 +130,27 @@ main
                 cols((columns / 3) * 2, columns, gutter)
 
 .btn
-    border none
+
     font-family inherit
     font-size rem-calc(16px)
     text-decoration none
     color inherit
     background none
     cursor pointer
-    padding rem-calc(25px) rem-calc(80px)
+    padding rem-calc(15px) rem-calc(40px)
     display inline-block
     margin rem-calc(15px) rem-calc(30px)
-    text-transform uppercase
     letter-spacing rem-calc(1px)
     font-weight 700
     outline none
     position relative
     transition all 0.3s
-    &:after
-        content ' '
-        position absolute
-        z-index -1
-        transition all 0.3s
 
 .btn-jumbo
-    border-radius 0 0 rem-calc(5px) rem-calc(5px)
-    background #cb4e4e
+    background transparent
     color #fff
-    box-shadow 0 rem-calc(6px) #ab3c3c
-    transition none
     margin-top rem-calc(30px)
-
-.btn-jumbo:hover
-    box-shadow 0 rem-calc(4px) #ab3c3c
-    top rem-calc(2px)
-
-.btn-jumbo:active
-    box-shadow 0 0 #ab3c3c
-    top rem-calc(6px)
+    border rem-calc(3px) solid #fff
+    &:hover, &.active
+        background-color #fff
+        color #000
