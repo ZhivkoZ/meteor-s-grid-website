@@ -1,0 +1,162 @@
+@import '_normalize'
+
+@import 's-grid-settings'
+@import 's-grid-functions'
+@import 's-grid'
+
+html, body, p, h1, h2, h3, h4, h5, h6
+    font-family 'Roboto' sans-serif
+
+.back-to-top-btn
+    background #e6e6e6
+    color #000
+    position fixed
+    bottom 0
+    right 0.9375rem
+    width 3.125rem
+    height 2.5rem
+    line-height 2.5rem
+    text-align center
+    cursor pointer
+    transition all .4s
+    border-radius 0.1875rem 0.1875rem 0 0
+    z-index 9999
+    transform translateZ(0)
+    &.hidden
+        display none
+header
+    width 100%
+    height rem-calc(40px)
+    background-color #1E2528
+    padding-left rem-calc(60px)
+    padding-right rem-calc(60px)
+    @extend .{gridClassName}
+    .logo
+        @extend .{cellClassName}
+        cols(columns / 2, columns, gutter);
+        font-weight 850
+        color #fff
+        h1
+            margin 0
+            font-size rem-calc(22px)
+    .menu
+        @extend .{cellClassName}
+        cols(columns / 2, columns, gutter);
+        color #fff
+        font-size rem-calc(22px)
+        text-align right
+        a
+            color inherit
+
+.jumbo
+    padding-top rem-calc(150px)
+    padding-bottom rem-calc(150px)
+    text-align center
+    font-weight 900
+    color #fff
+    background linear-gradient(to bottom right, #F06060 , #da5757);
+    font-size rem-calc(30px)
+    h2
+        font-size rem-calc(50px)
+    @media screen and (min-width: rem-calc(breakpoints[md]))
+        font-size rem-calc(55px)
+        h2
+            font-size rem-calc(100px)
+main
+    width 100%
+    max-width rem-calc(900px)
+    margin 0 auto
+    padding rem-calc(15px) rem-calc(40px)
+
+.docs
+    margin-bottom rem-calc(20px)
+    padding-top rem-calc(40px)
+    padding-bottom rem-calc(40px)
+    h2, h3
+        margin-bottom rem-calc(15px)
+        font-weight 400
+    h2
+        font-size rem-calc(40px)
+        margin-top rem-calc(70px)
+        margin-bottom rem-calc(20px)
+    h3
+        font-size rem-calc(26px)
+        margin-top rem-calc(70px)
+        margin-bottom rem-calc(20px)
+    pre
+        margin-top rem-calc(15px)
+        margin-bottom rem-calc(15px)
+        code
+            font-size rem-calc(14px)
+            padding rem-calc(20px) rem-calc(35px)
+            border-radius rem-calc(3px)
+    ul
+        margin-left rem-calc(20px)
+        margin-top rem-calc(20px)
+        margin-bottom rem-calc(20px)
+    .demo-grid
+        background-color darken(#f8f8f8, 3%)
+        margin-bottom rem-calc(40px)
+    .demo-item
+        background-color darken(#f8f8f8, 10%)
+        padding rem-calc(20px)
+        border-radius rem-calc(5px)
+    a
+        color #F06060
+        text-decoration none
+    hr
+        margin-bottom rem-calc(20px)
+        display block
+        height 1px
+        border 0
+        border-top 1px solid #f1f1f1
+        padding 0
+    section
+        @extend .{gridClassName}
+        aside, main
+            @extend .{cellClassName}
+            cols(columns, columns, gutter)
+        @media screen and (min-width: rem-calc(breakpoints[md]))
+            aside
+                cols(columns / 3, columns, gutter)
+            main
+                cols((columns / 3) * 2, columns, gutter)
+
+.btn
+    border none
+    font-family inherit
+    font-size rem-calc(16px)
+    text-decoration none
+    color inherit
+    background none
+    cursor pointer
+    padding rem-calc(25px) rem-calc(80px)
+    display inline-block
+    margin rem-calc(15px) rem-calc(30px)
+    text-transform uppercase
+    letter-spacing rem-calc(1px)
+    font-weight 700
+    outline none
+    position relative
+    transition all 0.3s
+    &:after
+        content ' '
+        position absolute
+        z-index -1
+        transition all 0.3s
+
+.btn-jumbo
+    border-radius 0 0 rem-calc(5px) rem-calc(5px)
+    background #cb4e4e
+    color #fff
+    box-shadow 0 rem-calc(6px) #ab3c3c
+    transition none
+    margin-top rem-calc(30px)
+
+.btn-jumbo:hover
+    box-shadow 0 rem-calc(4px) #ab3c3c
+    top rem-calc(2px)
+
+.btn-jumbo:active
+    box-shadow 0 0 #ab3c3c
+    top rem-calc(6px)
