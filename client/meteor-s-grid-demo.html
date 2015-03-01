@@ -5,9 +5,28 @@
 </head>
 
 <body>
+    {{> stickyHeder}}
     {{> main}}
     {{> backBtn}}
 </body>
+
+<template name="stickyHeder">
+    <div class="sticky-header js-sticky-header">
+        <div class="smenu">
+            <span><a href="#" class="js-go-top">S-Grid</a></span>
+            <small>
+                <a class="js-go-to-paragraph" href="#blockgrid">Block grid</a>
+                <a class="js-go-to-paragraph" href="#gridwithdifferentcells">Different cells</a>
+                <a class="js-go-to-paragraph" href="#nestedgrids">Nested grids</a>
+                <a class="js-go-to-paragraph" href="#griddirection">Grid direction</a>
+                <a class="js-go-to-paragraph" href="#overwritesettings">Overwrite settings</a>
+                <a class="js-go-to-paragraph" href="#cellsreordering">Cells reordering</a>
+                <a class="js-go-to-paragraph" href="#somanyuglyclasses">Mixins</a>
+                <a class="js-go-to-paragraph" href="#sortabledraganddropjspluginsintegration">Sortable (tests)</a>
+            </small>
+        </div>
+    </div>
+</template>
 
 <template name="backBtn">
     <div class="back-to-top-btn js-back-to-top-btn hidden">
@@ -68,8 +87,10 @@ Then in your main *.styl file import:
 
 You don't need to install Meteor Stylus package it is absorbed by s-grid. If you have it installed just uninstall it and install only s-grid package.
 
-### You can use it like a block grid. For example:
+### Block grid
 - - -
+
+Block grid example:
 
 ```
 <div class="s-grid-top s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
@@ -111,40 +132,37 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
 
 * ````s-grid-justify-center```` - centering all columns horizontally
 
-### How it looks like:
-- - -
-
-#### Grid top (s-grid-top)
-
+#### Block grid top example (s-grid-top)
+&nbsp;
 <div class="s-grid-top demo-grid s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae distinctio dolorem magnam tempora pariatur at, dolor minus ducimus, eaque fugit est exercitationem, ea laborum architecto dolorum, sequi sapiente quasi. Assumenda.
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae!
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae!
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto sed, rerum ratione at modi sunt!
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto sed, rerum ratione at modi sunt!
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+        4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae distinctio dolorem magnam tempora pariatur at, dolor minus ducimus, eaque fugit est exercitationem, ea laborum architecto dolorum, sequi sapiente quasi. Assumenda.
+        5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae distinctio dolorem magnam tempora pariatur at, dolor minus ducimus, eaque fugit est exercitationem, ea laborum architecto dolorum, sequi sapiente quasi. Assumenda.
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet.
+        6 Lorem ipsum dolor sit amet.
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+        7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
     </div>
     <div class="s-grid-cell demo-item">
-        Lorem ipsum dolor sit amet.
+        8 Lorem ipsum dolor sit amet.
     </div>
 </div>
 
-#### Grid bottom (s-grid-bottom)
-
+#### Block grid bottom example (s-grid-bottom)
+&nbsp;
 <div class="s-grid-bottom demo-grid s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
     <div class="s-grid-cell demo-item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
@@ -172,8 +190,8 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
     </div>
 </div>
 
-#### Grid center (s-grid-center)
-
+#### Block grid center example (s-grid-center)
+&nbsp;
 <div class="s-grid-center demo-grid s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
     <div class="s-grid-cell demo-item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
@@ -201,8 +219,8 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
     </div>
 </div>
 
-#### Grid center (s-grid-stretch)
-
+#### Block grid stretch example (s-grid-stretch)
+&nbsp;
 <div class="s-grid-stretch demo-grid s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
     <div class="s-grid-cell demo-item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas ut explicabo magnam, repellendus hic adipisci numquam atque minus molestias maxime fuga inventore eaque architecto sunt cumque, nostrum, provident, beatae nihil eveniet natus ipsa cupiditate earum incidunt aliquam. Magnam vitae ipsum rem quos, distinctio doloribus hic aliquid molestias iure quaerat tempore.
@@ -230,8 +248,8 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
     </div>
 </div>
 
-#### Grid center (s-grid-top s-grid-justify-center)
-
+#### Block grid justify-center example (s-grid-top s-grid-justify-center)
+&nbsp;
 <div class="s-grid-top s-grid-justify-center demo-grid s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
     <div class="s-grid-cell demo-item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
@@ -247,8 +265,9 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
     </div>
 </div>
 
-### If you want different cells sizes You can use it like for example:
+### Grid with different cells:
 - - -
+If you want different cells sizes..
 
 ```
 <div class="s-grid-top s-grid-justify-center">
@@ -292,10 +311,10 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
 * ````s-grid-cell-offset-xxlg-6````
 * ..etc
 
+&nbsp;
 
-### How it looks like:
-- - -
-
+#### Different cells example:
+&nbsp;
 <div class="s-grid-top demo-grid s-grid-justify-center">
     <div class="s-grid-cell demo-item s-grid-cell-sm-12 s-grid-cell-md-6 s-grid-cell-lg-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
@@ -329,7 +348,7 @@ You don't need to install Meteor Stylus package it is absorbed by s-grid. If you
 You should be able to use nested grids. Example:
 
 ```
-<div class="s-grid-top s-grid-sm-12 s-grid-lg-5 s-grid-justify-center">
+<div class="s-grid-top s-grid-sm-12 s-grid-lg-6 s-grid-justify-center">
     <div class="s-grid-cell">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
     </div>
@@ -345,10 +364,10 @@ You should be able to use nested grids. Example:
     </div>
 </div>
 ```
-### How it looks like:
-- - -
-
-<div class="s-grid-top demo-grid s-grid-sm-12 s-grid-lg-5 s-grid-justify-center">
+&nbsp;
+#### Nested grids example:
+&nbsp;
+<div class="s-grid-top demo-grid s-grid-sm-12 s-grid-lg-6 s-grid-justify-center">
     <div class="s-grid-cell demo-item">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
     </div>
@@ -361,6 +380,138 @@ You should be able to use nested grids. Example:
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea esse molestiae odit iusto at sapiente dicta reiciendis doloremque optio, atque!
             </div>
         </div>
+    </div>
+</div>
+
+### Grid direction:
+- - -
+
+#### You can change direction of the grid cells. To do so, just add one more class:
+
+* ````s-grid-column```` (from top to bottom)
+* ````s-grid-column-reverse```` (from bottom to top)
+* ````s-grid-row```` (from left to right - default)
+* ````s-grid-row-reverse```` (from right to left)
+
+**If you use column direction (top to bottom or bottom to top) you can control your main s-grid container height. Width of the container should be dynamic or you can set overflow-x: auto on it.**
+
+&nbsp;
+
+#### Grid direction example 1:
+&nbsp;
+```
+<div style="max-height: 400px; overflow-x: auto;" class="s-grid-top s-grid-column s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
+    <div class="s-grid-cell">
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+    </div>
+    <div class="s-grid-cell">
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae sint sapiente distinctio error molestias officiis tenetur porro perferendis doloribus!
+    </div>
+    <div class="s-grid-cell">
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perspiciatis!
+    </div>
+    <div class="s-grid-cell">
+        4 Lorem ipsum dolor sit.
+    </div>
+    <div class="s-grid-cell">
+        5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, architecto.
+    </div>
+    <div class="s-grid-cell">
+        6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci minus laboriosam nisi vero, est dignissimos.
+    </div>
+    <div class="s-grid-cell">
+        7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+    </div>
+    <div class="s-grid-cell">
+        8 Lorem ipsum dolor sit amet.
+    </div>
+</div>
+```
+
+<div style="max-height: 400px; overflow-x: auto;" class="s-grid-top demo-grid s-grid-column s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
+    <div class="s-grid-cell demo-item">
+        <strong>1</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>2</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae sint sapiente distinctio error molestias officiis tenetur porro perferendis doloribus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>3</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perspiciatis!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>4</strong> Lorem ipsum dolor sit.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>5</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, architecto.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci minus laboriosam nisi vero, est dignissimos.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>7</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>8</strong> Lorem ipsum dolor sit amet.
+    </div>
+</div>
+
+&nbsp;
+
+#### Grid direction example 2:
+&nbsp;
+```
+<div class="s-grid-top s-grid-row-reverse s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
+    <div class="s-grid-cell">
+        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+    </div>
+    <div class="s-grid-cell">
+        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae sint sapiente distinctio error molestias officiis tenetur porro perferendis doloribus!
+    </div>
+    <div class="s-grid-cell">
+        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perspiciatis!
+    </div>
+    <div class="s-grid-cell">
+        4 Lorem ipsum dolor sit.
+    </div>
+    <div class="s-grid-cell">
+        5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, architecto.
+    </div>
+    <div class="s-grid-cell">
+        6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci minus laboriosam nisi vero, est dignissimos.
+    </div>
+    <div class="s-grid-cell">
+        7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+    </div>
+    <div class="s-grid-cell">
+        8 Lorem ipsum dolor sit amet.
+    </div>
+</div>
+```
+
+<div class="s-grid-top demo-grid s-grid-row-reverse s-grid-sm-12 s-grid-md-6 s-grid-lg-4 s-grid-xlg-3 s-grid-xxlg-2">
+    <div class="s-grid-cell demo-item">
+        <strong>1</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>2</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae sint sapiente distinctio error molestias officiis tenetur porro perferendis doloribus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>3</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, perspiciatis!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>4</strong> Lorem ipsum dolor sit.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>5</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, architecto.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>6</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci minus laboriosam nisi vero, est dignissimos.
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>7</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+    </div>
+    <div class="s-grid-cell demo-item">
+        <strong>8</strong> Lorem ipsum dolor sit amet.
     </div>
 </div>
 
@@ -428,6 +579,21 @@ html:
 
 So ````my-special-item```` element should be first now.
 
+<div class="s-grid-top demo-grid s-grid-justify-center">
+    <div class="s-grid-cell demo-item s-grid-cell-sm-3 item normal-item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, doloribus!
+    </div>
+    <div class="s-grid-cell demo-item s-grid-cell-sm-3 item normal-item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae!
+    </div>
+    <div class="s-grid-cell demo-item s-grid-cell-sm-3 my-special-item">
+        <strong>It should be first!</strong>
+    </div>
+    <div class="s-grid-cell demo-item s-grid-cell-sm-3 item normal-item">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, repellendus!
+    </div>
+</div>
+
 ### So many ugly classes..
 - - -
 
@@ -437,9 +603,9 @@ You can also extend custom classes and use ````cols()```` function to create you
 
 ```
 section
-    @extend .{gridClassName}
+    grid()
     aside, main
-        @extend .{cellClassName}
+        grid-cell()
         cols(columns, columns, gutter)
     @media screen and (min-width: rem-calc(breakpoints[md]))
         aside
@@ -462,9 +628,10 @@ section
 You will have clean aside (4cols) and main (8cols) in 12 (default) columns grid.
 Go and see which classes you can extend: [https://github.com/juliancwirko/s-grid/blob/master/s-grid.styl](https://github.com/juliancwirko/s-grid/blob/master/s-grid.styl)
 
-### How it looks like:
-- - -
+&nbsp;
 
+#### Mixins example:
+&nbsp;
 <section class="demo-grid">
     <aside class="demo-item">
         Lorem ipsum dolor sit amet.
