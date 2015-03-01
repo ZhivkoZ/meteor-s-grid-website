@@ -1,4 +1,5 @@
 @import '_normalize'
+@import 'rupture'
 
 @import 's-grid-settings'
 @import 's-grid-functions'
@@ -31,10 +32,13 @@ header
     padding-left rem-calc(60px)
     padding-right rem-calc(60px)
     @extend .{gridClassName}
+    justify-content center
+    .logo, .menu
+        margin: 0;
     .logo
         @extend .{cellClassName}
         cols(columns / 2, columns, gutter);
-        font-weight 850
+        font-weight 800
         color #fff
         h1
             margin 0
@@ -46,8 +50,44 @@ header
         font-size rem-calc(22px)
         text-align right
         a
-            color inherit
+           color inherit
+    .logo, .menu
+        line-height rem-calc(40px)
 
+.sticky-header
+    position fixed
+    background-color #1E2528
+    color #fff
+    width 100%
+    transition transform .5s
+    transform translate3d(0, -100%, 0)
+    z-index 999
+    padding-top rem-calc(15px)
+    padding-bottom rem-calc(15px)
+    .smenu
+        padding-left rem-calc(30px)
+        padding-right rem-calc(30px)
+        font-size rem-calc(20px)
+        font-weight 800
+        a
+            color #fff
+            padding-left rem-calc(10px)
+            padding-right rem-calc(10px)
+            text-decoration none
+        small
+            font-weight 600
+            padding-left rem-calc(30px)
+            display inline-block
+            font-size rem-calc(14px)
+    +below(rem-calc(1100px))
+        text-align center
+        .smenu
+            a
+                display inline-block
+                padding-top rem-calc(5px)
+                padding-bottom rem-calc(5px)
+    &.active
+        transform translate3d(0, 0, 0)
 .jumbo
     padding-top rem-calc(180px)
     padding-bottom rem-calc(145px)
@@ -100,6 +140,11 @@ main
         margin-left rem-calc(20px)
         margin-top rem-calc(20px)
         margin-bottom rem-calc(20px)
+        li
+            code
+                background-color #f1f1f1
+                padding-left rem-calc(5px)
+                padding-right rem-calc(5px)
     .demo-grid
         background-color rgba(#23222D, 0.1)
         margin-bottom rem-calc(40px)
@@ -154,3 +199,10 @@ main
     &:hover, &.active
         background-color #fff
         color #000
+
+// for demo purposes
+
+.normal-item
+    order 1
+.my-special-item
+    order 0
