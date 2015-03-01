@@ -31,12 +31,15 @@ header
     background-color #1E2528
     padding-left rem-calc(60px)
     padding-right rem-calc(60px)
-    @extend .{gridClassName}
+    grid()
     justify-content center
+    +below(rem-calc(1000px))
+        padding-left rem-calc(15px)
+        padding-right rem-calc(15px)
     .logo, .menu
         margin: 0;
     .logo
-        @extend .{cellClassName}
+        grid-cell()
         cols(columns / 2, columns, gutter);
         font-weight 800
         color #fff
@@ -44,7 +47,7 @@ header
             margin 0
             font-size rem-calc(22px)
     .menu
-        @extend .{cellClassName}
+        grid-cell()
         cols(columns / 2, columns, gutter);
         color #fff
         font-size rem-calc(22px)
@@ -164,9 +167,9 @@ main
         border-top 1px solid #f1f1f1
         padding 0
     section
-        @extend .{gridClassName}
+        grid()
         aside, main
-            @extend .{cellClassName}
+            grid-cell()
             cols(columns, columns, gutter)
         @media screen and (min-width: rem-calc(breakpoints[md]))
             aside
