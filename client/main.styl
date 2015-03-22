@@ -39,16 +39,14 @@ header
     .logo, .menu
         margin: 0;
     .logo
-        grid-cell()
-        cols(columns / 2, columns, gutter);
+        cols(columns / 2, columns, 0);
         font-weight 800
         color #fff
         h1
             margin 0
             font-size rem-calc(22px)
     .menu
-        grid-cell()
-        cols(columns / 2, columns, gutter);
+        cols(columns / 2, columns, 0);
         color #fff
         font-size rem-calc(22px)
         text-align right
@@ -169,7 +167,6 @@ main
     section
         grid()
         aside, main
-            grid-cell()
             cols(columns, columns, gutter)
         @media screen and (min-width: rem-calc(breakpoints[md]))
             aside

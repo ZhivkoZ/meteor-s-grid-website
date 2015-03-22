@@ -607,13 +607,12 @@ So ````my-special-item```` element should be first now.
 
 Yes I know :) It could be simpler, but sometimes it is good to have namespace.
 You can change the names of main classes. (read above).
-You can also extend custom classes and use ````grid()````, ````grid-cell()````, ````cols()```` function to create your custom styles. (Semantic approach)
+You can also extend custom classes and use ````grid()````, ````cols()```` function to create your custom styles. (Semantic approach)
 
 ```
 section
     grid()
     aside, main
-        grid-cell()
         cols(columns, columns, gutter)
     @media screen and (min-width: rem-calc(breakpoints[md]))
         aside
